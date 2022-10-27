@@ -28,12 +28,12 @@ console.log(`Currently checking the password "${password}"`)
 
 
 
-let numberOfTimes = false
+let numberOfTimes = 0
 
 for (i = 0; i < password.length; i++){
     const numberOfTimes = specialChars[i]
     if (password.includes(specialChars)){
-        numberOfTimes = true
+        numberOfTimes++
     }
 } 
 
@@ -44,6 +44,9 @@ else if (password.length >= 12 && password.includes('-')){
     console.log('Great! This is a pretty good password')
 }
 else if (password.length >= 8 && numberOfTimes){
+    console.log('Great! This is a good password')
+}
+else if (password.length >= 6 && numberOfTimes >= 2){
     console.log('Great! This is a good password')
 }
 else {
